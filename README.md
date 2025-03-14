@@ -11,26 +11,26 @@ Uses ImageSharp to handle image encoding: https://github.com/SixLabors/ImageShar
 
 ## Install using NuGet
 
-[![Nuget](https://img.shields.io/nuget/v/HalfLife.UnifiedSdk.Utilities?color=fcba03&label=HalfLife.UnifiedSdk.Utilities&logo=nuget)](https://www.nuget.org/packages/HalfLife.UnifiedSdk.Utilities/)
+[![Nuget](https://img.shields.io/nuget/v/Utilities?color=fcba03&label=Utilities&logo=nuget)](https://www.nuget.org/packages/Utilities/)
 
-## HalfLife.UnifiedSdk.Utilities
+## Utilities
 
 This library contains utility functionality for opening, analyzing, modifying, converting and upgrading Half-Life 1 maps made for the GoldSource engine.
 
-A list of Valve-made games can be accessed through the `HalfLife.UnifiedSdk.Utilities.Games.ValveGames` class.
+A list of Valve-made games can be accessed through the `Utilities.Games.ValveGames` class.
 A set of `GameInfo` objects provides basic information about each game, such as the engine the game runs on, the mod directory its content is installed in and a list of official maps.
 
-A map can be loaded into a `HalfLife.UnifiedSdk.Utilities.Maps.Map` object. You can load vanilla Half-Life 1 maps as well as Blue Shift maps. This provides basic information about the map such as whether it is a map source file (`.rmf`, `.map`) or a compiled map file (`.bsp`, `.ent`), the file name and base name (used in `trigger_changelevel`, console commands and the `Create Server` dialog).
+A map can be loaded into a `Utilities.Maps.Map` object. You can load vanilla Half-Life 1 maps as well as Blue Shift maps. This provides basic information about the map such as whether it is a map source file (`.rmf`, `.map`) or a compiled map file (`.bsp`, `.ent`), the file name and base name (used in `trigger_changelevel`, console commands and the `Create Server` dialog).
 
-It also provides access to the map's entity list through the `Entities` property. This is an `HalfLife.UnifiedSdk.Utilities.Entities.EntityList` object containing the list of all entities in the map. 
+It also provides access to the map's entity list through the `Entities` property. This is an `Utilities.Entities.EntityList` object containing the list of all entities in the map. 
 
-Entity objects are of the type `HalfLife.UnifiedSdk.Utilities.Entities.Entity` and can be manipulated in various ways. All entities except `worldspawn` can be removed from a map and have their class name changed.
+Entity objects are of the type `Utilities.Entities.Entity` and can be manipulated in various ways. All entities except `worldspawn` can be removed from a map and have their class name changed.
 
 All entities can have their keyvalues added, removed and modified. New entities can be created and added to a map (it is not possible to add entities that the mod the map is played with does not support).
 
 Helper methods exist to simplify certain tasks. For example the contents of a map can be replaced with those of another using the `EntityListExtensions.ReplaceWith` LINQ method. This behavior is identical to what Ripent does.
 
-The `HalfLife.UnifiedSdk.Utilities.Tools` namespace provides various tools for the automation of tasks:
+The `Utilities.Tools` namespace provides various tools for the automation of tasks:
 * `MapFormats`: Provides methods to load maps into memory, automatically detecting the format based on file extension. Direct access to serializers is also provided.
 * `KeyValueUtilities`: Provides constants for commonly used keyvalues as well as methods for identifying values.
 * `ModUtilities`: Provides methods to enumerate mods in a GoldSource engine installation and loading the `liblist.gam` file.
