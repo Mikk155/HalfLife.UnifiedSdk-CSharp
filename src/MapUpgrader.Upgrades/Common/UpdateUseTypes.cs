@@ -9,9 +9,15 @@ namespace MapUpgrader.Upgrades.Common
     /// </summary>
     internal sealed class UpdateUseTypes : MapUpgrade
     {
+        private static readonly ImmutableArray<string> ClassNames = ImmutableArray.Create(
+            "trigger_relay",
+            "trigger_auto",
+            "trigger_ctfgeneric"
+        );
+
         protected override void ApplyCore( MapUpgradeContext context )
         {
-            foreach( var entity in context.Map.Entities.OfClass( "trigger_relay" ) )
+            foreach( var entity in context.Map.Entities.Where( e => ClassNames.Contains( e.ClassName ) ) )
             {
                 if( !entity.ContainsKey( "triggerstate" ) )
                 {
@@ -22,9 +28,10 @@ namespace MapUpgrader.Upgrades.Common
                 {
                     0 => 0, // Off
                     1 => 1, // On
+                    2 => 3, // TOGGLE
                     3 => 2, // Sven coop's USE_SET
                     4 => 4, // Sven coop's USE_KILL
-                    _ => 3 // TOGGLE
+                    _ => 1 // On (Default in the game's code)
                 };
 
                 entity.Remove( "triggerstate" );
