@@ -40,6 +40,7 @@ namespace MapUpgrader.Upgrades
             builder.AddUpgrade(new AdjustMaxRangeUpgrade());
             builder.AddUpgrade(new ConvertBarneyModelUpgrade());
             builder.AddUpgrade(new ChangeBell1SoundAndPitch());
+            builder.AddUpgrade(new UpdateUseTypes());
             return builder;
         }
 
