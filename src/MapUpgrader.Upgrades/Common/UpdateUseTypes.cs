@@ -12,7 +12,9 @@ namespace MapUpgrader.Upgrades.Common
         private static readonly ImmutableArray<string> ClassNames = ImmutableArray.Create(
             "trigger_relay",
             "trigger_auto",
-            "trigger_ctfgeneric"
+            "trigger_ctfgeneric",
+            "game_team_master",
+            "trigger_entity_iterator"
         );
 
         protected override void ApplyCore( MapUpgradeContext context )
