@@ -22,7 +22,7 @@ namespace MapUpgrader.Upgrades.OpposingForce
         {
             foreach (var entity in context.Map.Entities.Where(e => NPCTargetNames.Contains(e.GetTargetName())))
             {
-                entity.SetInteger("allow_item_dropping", 0);
+                entity.SetInteger("cfg_allow_npc_item_dropping", 0);
             }
         }
     }
