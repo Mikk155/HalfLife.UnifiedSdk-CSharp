@@ -41,6 +41,7 @@ namespace MapUpgrader.Upgrades
             builder.AddUpgrade(new ConvertBarneyModelUpgrade());
             builder.AddUpgrade(new ChangeBell1SoundAndPitch());
             builder.AddUpgrade(new UpdateUseTypes());
+            builder.AddUpgrade(new BabycrabRenderfields());
             return builder;
         }
 
