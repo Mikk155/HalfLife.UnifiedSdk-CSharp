@@ -42,6 +42,7 @@ namespace MapUpgrader.Upgrades
             builder.AddUpgrade(new ChangeBell1SoundAndPitch());
             builder.AddUpgrade(new UpdateUseTypes());
             builder.AddUpgrade(new BabycrabRenderfields());
+            builder.AddUpgrade(new UpdateSpawnpoints());
             return builder;
         }
 
