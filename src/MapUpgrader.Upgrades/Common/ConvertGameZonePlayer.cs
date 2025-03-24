@@ -23,7 +23,7 @@ namespace MapUpgrader.Upgrades.Common
             {
                 foreach( var kv in entity.WithoutClassName().ToList() )
                 {
-                    if( ClassNames.TryGetValue( kv.Key, out var className ) )
+                    if( KeyValueNames.TryGetValue( kv.Key, out var className ) )
                     {
                         entity.Remove(kv.Key);
                         entity.SetString(className, kv.Value);
@@ -35,7 +35,7 @@ namespace MapUpgrader.Upgrades.Common
                 entity.SetInteger( "m_OutUse", 5 );
 
                 // No "fire after action" exist
-                entity.Target = "";
+                entity.Remove( "target" );
             }
         }
     }

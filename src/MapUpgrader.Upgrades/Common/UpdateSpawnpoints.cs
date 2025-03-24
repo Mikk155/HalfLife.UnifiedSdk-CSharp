@@ -24,7 +24,7 @@ namespace MapUpgrader.Upgrades.Common
                 {
                     entity.ClassName = "info_player_start_mp";
                 }
-                else if( entity.ClassName = "info_player_start" )
+                else if( entity.ClassName == "info_player_start" )
                 {
                     // info_player_start never fired its target before.
                     entity.SetTarget("");
