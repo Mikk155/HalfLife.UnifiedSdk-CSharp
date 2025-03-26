@@ -44,6 +44,7 @@ namespace MapUpgrader.Upgrades
             builder.AddUpgrade(new BabycrabRenderfields());
             builder.AddUpgrade(new UpdateSpawnpoints());
             builder.AddUpgrade(new ConvertGameZonePlayer());
+            builder.AddUpgrade(new ConvertZombieBarney());
             return builder;
         }
 
